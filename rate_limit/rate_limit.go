@@ -7,7 +7,7 @@ import (
 )
 
 const (
-	EPS  = 0.000001
+	EPS = 0.000001
 )
 
 func IsEqual(f1, f2 float64) bool {
@@ -23,11 +23,8 @@ type TokenBucketLimiter struct {
 	isLimit bool
 }
 
-var rateLimiter *TokenBucketLimiter
-
 func GetBucketLimit(RateLimitVal float64) *TokenBucketLimiter {
-	rateLimiter = newBucketLimit(RateLimitVal)
-	return rateLimiter
+	return newBucketLimit(RateLimitVal)
 }
 
 func newBucketLimit(rateLimitVal float64) (limiter *TokenBucketLimiter) {
